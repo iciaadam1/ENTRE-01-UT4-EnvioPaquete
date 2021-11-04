@@ -1,7 +1,7 @@
 
 /**
  *  Un objeto de esta clase representa un envío de varios paquetes,
- *  máximo tres
+ *  máximo tres.
  *  
  * 
  * @author -   
