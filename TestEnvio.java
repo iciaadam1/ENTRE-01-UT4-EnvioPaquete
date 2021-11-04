@@ -7,21 +7,21 @@
  */
 public class TestEnvio
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     *  
      */
     public void Main()
     {
-        // paquete1  = new Paquete();
-        
+        Paquete paquete1 = new Paquete();
+        Paquete paquete2 = new Paquete(40,60,40);
+        Envio envio =new Envio();
+        envio.addPaquete(paquete1);
+        envio.addPaquete(paquete2);
+        envio.print();
+        Paquete paquete3 = new Paquete(50,50,70);
+        envio.addPaquete(paquete3);
+        envio.print();
         
     }
 }

@@ -114,20 +114,52 @@ public class Envio
      */
     public double calcularCosteTotalEnvio() {
        double costeTotal = 0;
-       costeTotal = (paquete1.calcularPesoFacturable() + 
-       paquete2.calcularPesoFacturable() + paquete3.calcularPesoFacturable()) * 2;
+        switch (getNumeroPaquetes()){
+         case 1:
+            costeTotal = (Math.ceil(paquete1.calcularPesoFacturable()))* PRECIO_KILO;
+            break;
+         case 2:
+            costeTotal = (Math.ceil(paquete1.calcularPesoFacturable()) + 
+            Math.ceil(paquete2.calcularPesoFacturable()))* PRECIO_KILO;
+            break;
+         case 3:
+            costeTotal = (Math.ceil(paquete1.calcularPesoFacturable()) +
+       Math.ceil(paquete2.calcularPesoFacturable()) 
+        + Math.ceil(paquete3.calcularPesoFacturable()))* PRECIO_KILO;
        return costeTotal;
 
     }
-
+    return costeTotal;
+    }
     /**
      * Representación textual del envío
      * con el formato exacto indicado
      * (leer enunciado)
      */
     public String toString() {
-       //TODO
-       return null;
+        String str = "";
+        switch (getNumeroPaquetes()){
+         case 1:
+            str = String.format("Numero de paquetes:" + getNumeroPaquetes());
+            str += paquete1.toString();
+            str += String.format("  \n\nCoste total envío:" + calcularCosteTotalEnvio()+"€");
+            break;
+         case 2:
+            str = String.format("Numero de paquetes:" + getNumeroPaquetes());
+            str += paquete1.toString();
+            str += paquete2.toString();
+            str += String.format("  \n\nCoste total envío:" + calcularCosteTotalEnvio()+"€");
+            break;
+         case 3:
+            str = String.format("Numero de paquetes:" + getNumeroPaquetes());
+            str += paquete1.toString();
+            str += paquete2.toString();
+            str += paquete3.toString();
+            str += String.format("\n\n Coste total envío:" + calcularCosteTotalEnvio() +"€");
+    
+            
+        }
+        return str;
     }
 
     /**

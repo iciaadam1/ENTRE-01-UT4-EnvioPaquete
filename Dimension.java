@@ -55,9 +55,12 @@ public class Dimension
      * (leer enunciado)
      */
     public String toString() {
-        String str = "Alto:" + alto + "(cm)\nAncho:" + ancho + "(cm)\nLargo:" + largo +"(cm)";
+        String str = "";
+        int espacios = 20;
+        str = String.format("\n%" + espacios + "s%10.2f(cm)","Alto: ", alto);
+        str += String.format("\n%" + espacios + "s%10.2f(cm)","Ancho: ", ancho);
+        str += String.format("\n%" + espacios + "s%10.2f(cm)","Largo: ", largo);
         return str;
-
     }
 
     /**
